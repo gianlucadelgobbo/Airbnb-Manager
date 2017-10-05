@@ -1,0 +1,23 @@
+{
+  "name": "Airbnb-Manager",
+  "homepage": "https://github.com/gianlucadelgobbo/Airbnb-Manager",
+  "authors": [
+    "Gianluca Del Gobbo <g.delgobbo@flyer.it>"
+  ],
+  "description": "Manager for hosts",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "jquery": "^3.2.1",
+    "bootstrap-table": "^1.11.1",
+    "tableexport.jquery.plugin": "tableExport.jquery.plugin#^1.9.5"
+  }
+}
