@@ -68,4 +68,5 @@ module.exports = function(app, exp) {
   app.use(exp.static('./app/public'));
    */
   app.use(exp.static('./bower_components'));
+  app.use(exp.static('./public'));
 };
