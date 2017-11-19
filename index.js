@@ -83,14 +83,14 @@ class EventRecord {
     this.reservation = obj.RESERVATION.trim();
     this.start = obj.DTSTART.trim();
     //this.start = this.start.substring(6,8)+"/"+this.start.substring(4,6)+"/"+this.start.substring(0,4);
-    this.start = new Date(this.start.substring(0,4), this.start.substring(4,6), this.start.substring(6,8)).getTime();
+    this.start = new Date(this.start.substring(0,4), this.start.substring(4,6)-1, this.start.substring(6,8)).getTime();
     this.end = obj.DTEND.trim();
     //this.end = this.end.substring(6,8)+"/"+this.end.substring(4,6)+"/"+this.end.substring(0,4);
-    this.end = new Date(this.end.substring(0,4), this.end.substring(4,6), this.end.substring(6,8)).getTime();
+    this.end = new Date(this.end.substring(0,4), this.end.substring(4,6)-1, this.end.substring(6,8)).getTime();
     if (obj.CHECKIN) {
       this.checkin = obj.CHECKIN.trim().replace('\\', '');
       //this.checkin = this.checkin.substring(3,5)+"/"+this.checkin.substring(0,2)+"/"+this.checkin.substring(6,10);
-      this.checkin = new Date(this.checkin.substring(6, 10), this.checkin.substring(0, 2), this.checkin.substring(3, 5)).getTime();
+      this.checkin = new Date(this.checkin.substring(6, 10), this.checkin.substring(0, 2)-1, this.checkin.substring(3, 5)).getTime();
       //this.order = parseInt(this.checkin.substring(6,10)+this.checkin.substring(3,5)+this.checkin.substring(0,2));
     } else {
       //this.order = 0;
@@ -99,7 +99,7 @@ class EventRecord {
     if (obj.CHECKOUT) {
       this.checkout = obj.CHECKOUT.trim().replace('\\', '');
       //this.checkout = this.checkout.substring(3, 5) + "/" + this.checkout.substring(0, 2) + "/" + this.checkout.substring(6, 10);
-      this.checkout = new Date(this.checkout.substring(6, 10), this.checkout.substring(0, 2), this.checkout.substring(3, 5)).getTime();
+      this.checkout = new Date(this.checkout.substring(6, 10), this.checkout.substring(0, 2)-1, this.checkout.substring(3, 5)).getTime();
     } else {
       this.checkout = '';
     }
@@ -153,7 +153,7 @@ function DateFormatter(value, row, index) {
 }
 function PhoneFormatter(value, row, index) {
   if (!value) return '';
-  return '<a href="phone:' + value + '">' + value + '</a>';
+  return '<a href="phone:' + value + '">' + value + '</a> | <a target="_blank" href="https://api.whatsapp.com/send?phone=' + value.replace("+","").replace(/\s/g,'').replace(/\)/g,'') + '">WA</a>';
 }
 
 function EmailFormatter(value, row, index) {
