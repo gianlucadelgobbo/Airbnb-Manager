@@ -1,0 +1,23 @@
+{
+  "name": "airbnb-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gianlucadelgobbo/Airbnb-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gianlucadelgobbo/Airbnb-Manager/issues"
+  },
+  "homepage": "https://github.com/gianlucadelgobbo/Airbnb-Manager#readme",
+  "dependencies": {
+    "curl": "^0.1.4",
+    "express": "^4.16.2"
+  }
+}
