@@ -7,41 +7,6 @@ const KEY_WORDS = {
   SUBSTRING: [19, 17, 8, 9, 10, 8, 7, 7, 10]
 };
 
-$(function() {
-  $('#input_url').click(function(e) {
-    var val = $('#input_url_path').val();
-    console.log(val);
-    if (val){
-      $.get(val,{
-      },function (data){
-        parse(data);
-        printResult();
-      });
-
-    }
-  });
-  $('#input_file').change(function(e) {
-      /*$('#div_download').empty();
-       $('#div_result_file_name').empty();
-       $('#div_result_table').empty();*/
-
-    const INPUT_FILE = e.target.files[0];
-    if (INPUT_FILE === null) {
-      return;
-    }
-    $('#input_file_path').val(INPUT_FILE.name);
-    /*$('#input_file_path').append('ICS Airbnb Calendar：' + INPUT_FILE.name + '<hr/>');*/
-
-    let fileReader = new FileReader();
-    fileReader.readAsText(INPUT_FILE);
-    fileReader.onload = function() {
-      parse(fileReader.result);
-      printResult();
-    };
-  });
-});
-
-
 function printResult() {
   var columns = [];
   columns.push({field: 'id',			title: 'ID',			sortable: true});

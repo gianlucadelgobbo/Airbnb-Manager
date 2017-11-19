@@ -1,5 +1,5 @@
 var indexRoutes = require('./routes/index');
 module.exports = function(app) {
   app.get('/', indexRoutes.get);
-  app.post('/', indexRoutes.post);
+  app.post('/parseCalendar', indexRoutes.post);
 };

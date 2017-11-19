@@ -3,35 +3,27 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     title Google Calendar ics to CSVe
-    link(rel='stylesheet', type='text/css', href='/bootstrape/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/bootstrap-table/dist/bootstrap-table.css')
   body
     .container-fluid
       h1.page-header Airbnb Manager
       .row
-        .col-sm-4.col-sm-offset-4.text-center
+        .col-sm-8.col-sm-offset-2.text-center
           h3
-            | Choose the
+            != "Choose the "
             kbd .ics
-            |  Airbnb calendar file
+            != " Airbnb calendar file"
           br
-          .input-group
-            label.input-group-btn
-              span.btn.btn-primary
-                | Browse Local .ICS File
-                input#input_file(type='file', style='display: none;', multiple='')
-            input#input_file_path.form-control(type='text', readonly='')
-          h3 OR
-          br
-          form(method="post")
+          form#airbnbForm(method="post", action="/parseCalendar")
             .input-group
-              input.form-control(name="input_url_path", type='text', value='https://www.airbnb.com/calendar/ical/3083211.ics?s=f66289ad82f1dc1193d89f4cbfd3f7ca')
+              input.form-control(name="input_url_path", type='text')
               label.input-group-btn
                 input.btn.btn-primary(type="submit", value="Load .ICS from url")
 
       block content
       hr
-      table#table_result(data-search='true', data-show-columns='true', data-show-export='true', data-show-pagination-switch='true', data-pagination='true', data-id-field='id', data-page-list='[10, 25, 50, 100, ALL]')
+      table#table_result(data-search='true', data-show-columns='true', data-show-export='true', data-show-pagination-switch='true', data-pagination='true', data-id-field='id', data-page-size='25', data-page-list='[25, 50, 100, ALL]')
       hr
       |  Source code on
       !=" "
@@ -45,4 +37,5 @@ html(lang='en')
     script(src='bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js')
     script(src='tableexport.jquery.plugin/tableExport.js')
     script(type='text/javascript', src='index.js')
+    script(type='text/javascript', src='script.js')
 
