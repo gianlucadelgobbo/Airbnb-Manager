@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Google Calendar ics to CSV
+    link(rel='stylesheet', type='text/css', href='bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='bootstrap-table/dist/bootstrap-table.css')
+  body
+    .container-fluid
+      h1.page-header Airbnb Manager
+      .row
+        .col-sm-4.col-sm-offset-4.text-center
+          h3
+            | Choose the
+            kbd .ics
+            |  Airbnb calendar file
+          br
+          .input-group
+            label.input-group-btn
+              span.btn.btn-primary
+                | Browse Local .ICS File
+                input#input_file(type='file', style='display: none;', multiple='')
+            input#input_file_path.form-control(type='text', readonly='')
+          h3 OR
+          br
+          form(method="post")
+            .input-group
+              input.form-control(name="input_url_path", type='text', value='https://www.airbnb.com/calendar/ical/3083211.ics?s=f66289ad82f1dc1193d89f4cbfd3f7ca')
+              label.input-group-btn
+                input.btn.btn-primary(type="submit", value="Load .ICS from url")
+
+      block content
+      hr
+      table#table_result(data-search='true', data-show-columns='true', data-show-export='true', data-show-pagination-switch='true', data-pagination='true', data-id-field='id', data-page-list='[10, 25, 50, 100, ALL]')
+      hr
+      |  Source code on
+      !=" "
+      a(href='https://github.com/gianlucadelgobbo/Airbnb-Manager', target='_blank') Github
+      #div_result_file_name
+      #div_result_table
+    script(src='jquery/dist/jquery.min.js')
+    script(src='bootstrap/dist/js/bootstrap.min.js')
+    script(src='bootstrap-table/dist/bootstrap-table.js')
+    script(src='bootstrap-table/dist/locale/bootstrap-table-en-US.min.js')
+    script(src='bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js')
+    script(src='tableexport.jquery.plugin/tableExport.js')
+    script(type='text/javascript', src='index.js')
+

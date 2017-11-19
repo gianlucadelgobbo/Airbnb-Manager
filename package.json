@@ -1,8 +1,8 @@
 {
   "name": "airbnb-manager",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "airbnb-manager",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/gianlucadelgobbo/Airbnb-Manager#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "curl": "^0.1.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "pug": "^2.0.0-rc.4"
   }
 }

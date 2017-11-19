@@ -11,16 +11,10 @@ var app = exp();
 app.root = __dirname;
 global.host = 'localhost';
 
-//require('./app/setup')(app, exp);
-//require('./app/server/router')(app);
+require('./app/setup')(app, exp);
+require('./app/router')(app);
 
 app.listen(8033, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  var curl = require("curl")
-  curl.get('https://www.airbnb.com/calendar/ical/3083211.ics?s=f66289ad82f1dc1193d89f4cbfd3f7ca', {}, function(err, response, body) {
-    console.log(body);
-  });
-
-
 });
 
