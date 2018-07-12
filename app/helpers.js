@@ -1,5 +1,6 @@
 module.exports = {
   parse: function parse(result) {
+    console.log(result);
     const KEY_WORDS = {
       WORDS: ['DTSTART', 'DTEND', 'SUMMARY', 'CHECKIN', 'CHECKOUT', 'NIGHTS', 'PHONE', 'EMAIL', 'PROPERTY'],
       SUBSTRING: [19, 17, 8, 9, 10, 8, 7, 7, 10]
