@@ -46,6 +46,8 @@ function EmailFormatter(value, row, index) {
 }
 function readSingleFile(e) {
   var file = e.target.files[0];
+  console.log(file);
+  $('.custom-file-label').html(file.name);
   if (!file) {
     return;
   }

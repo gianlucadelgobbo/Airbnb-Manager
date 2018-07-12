@@ -6,11 +6,12 @@ html(lang='en')
     title Airbnb Manager
     link(rel='stylesheet', type='text/css', href='/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/assets/bootstrap-table/src/bootstrap-table.css')
+    link(rel='stylesheet', type='text/css', href='/assets/examples.css')
   body
     .container-fluid
-      h1.page-header Airbnb Manager
+      h1.page-header.text-center.mt-2 Airbnb Manager
       .row
-        .col-sm-8.col-sm-offset-2.text-center
+        .col-sm-8.offset-sm-2.text-center
           h3
             != "Choose the "
             kbd .ics
@@ -26,7 +27,7 @@ html(lang='en')
           form#airbnbForm(method="post", action="/parseCalendar")
             .custom-file
               input.custom-file-input#file-input(name="input_url_path", type='file')
-              label.custom-file-label(for="file-input")="Load .ICS from url"
+              label.custom-file-label(for="file-input")="Load .ICS from your pc"
 
       block content
       hr
